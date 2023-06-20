@@ -1,5 +1,7 @@
 # dojo_blog
 
+This project is another set of lectures from Shaun NetNinja.dev
+
 ## Project setup
 ```
 npm install
