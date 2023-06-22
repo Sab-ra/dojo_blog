@@ -25,7 +25,8 @@ export default {
     const age = ref( 41 )
 
     const handleClick = () => {
-      
+      name.value = 'luigi'
+      age.value = 133
     }
 
     return {
