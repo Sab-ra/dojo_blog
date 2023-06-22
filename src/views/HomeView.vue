@@ -6,6 +6,9 @@
   <button @click="handleClick">
     Click Me!
   </button>
+  <button @click="age++">
+    Add 1 to age
+  </button>
   <input type="text" v-model="name">
 </template>
 
