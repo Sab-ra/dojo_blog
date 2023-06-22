@@ -18,6 +18,8 @@ export default {
     console.log( this )
 
     const paragraph = ref( null )
+    console.log( paragraph, paragraph.value )
+
 
     let name = 'mario'
     let age = 40
