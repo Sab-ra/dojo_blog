@@ -6,6 +6,7 @@
   <button @click="handleClick">
     Click Me!
   </button>
+  <input type="text" v-model="name">
 </template>
 
 <script>
