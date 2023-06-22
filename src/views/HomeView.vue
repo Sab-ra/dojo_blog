@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     home
-    <p ref="paragraph">My name is {{ name }} and my age is {{ age }}</p>
+    <p>My name is {{ name }} and my age is {{ age }}</p>
   </div>
   <button @click="handleClick">
     Click Me!
@@ -21,11 +21,11 @@ export default {
     console.log( paragraph, paragraph.value )
 
 
-    let name = 'mario'
-    let age = 40
+    const name = ref( 'mario' )
+    const age = ref( 41 )
 
     const handleClick = () => {
-      name = 'luigi'
+      
     }
 
     return {
