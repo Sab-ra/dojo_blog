@@ -25,6 +25,7 @@ export default {
     const handleClick = () => {
       console.log( paragraph, paragraph.value )
       paragraph.value.classList.add( 'test_dinamic_class' )
+      paragraph.value.textContent = 'Hello, Ninjas!'
     }
 
     return {
