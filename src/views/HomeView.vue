@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 export default {
   name: 'HomeView',
@@ -17,8 +17,12 @@ export default {
     const search = ref( '' )
     const names = ref( [ 'mario', 'youshi', 'luigi', 'toad', 'bowzer', 'kamila', 'koopa', 'peach' ] )
 
+    watch( search, () => {
+      console.log( "I'm watching your search" )
+    })
+
     const matching_names = computed( () => {
-      return names.value.filter( (name) => name.includes( search.value ) )
+      return names.value.filter( ( name ) => name.includes( search.value ) )
     })
 
     return {
