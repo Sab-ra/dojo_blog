@@ -22,7 +22,7 @@ export default {
     })
 
     watchEffect( () => {
-      console.log( 'Run watchEffect function' )
+      console.log( 'Run watchEffect function', search.value )
     })
 
     const matching_names = computed( () => {
