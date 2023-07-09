@@ -1,10 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <input type="text" v-model="search">
-    <p>Search term '{{ search }}'</p>
-    <div v-for="name in matching_names" v-bind:key="name">{{ name }}</div>
-    <button @click="handleClick">stop watching</button>
+    
   </div>
 </template>
 
@@ -15,33 +12,18 @@ export default {
   name: 'HomeView',
 
   setup() {
-    const search = ref( '' )
-    const names = ref( [ 'mario', 'youshi', 'luigi', 'toad', 'bowzer', 'kamila', 'koopa', 'peach' ] )
+    const posts = ref{ [
+      { title: "Welcome to the blog", 
+        body: "Lorem impsum",
+        id: 1 
+      },
+      { title: "top 5 css tips",
+        body: "Lorem impsum fuck",
+        id: 2
+      },
+    ]}
 
-    const stopWatch = watch( search, () => {
-      console.log( "I'm watching your search" )
-    })
-
-    const stopEffect = watchEffect( () => {
-      console.log( 'Run watchEffect function', search.value )
-    })
-
-    const handleClick = () => {
-      stopWatch()
-      stopEffect()
-    }
-
-    const matching_names = computed( () => {
-      return names.value.filter( ( name ) => name.includes( search.value ) )
-    })
-
-    return {
-      names,
-      search,
-      matching_names,
-      handleClick
-    }
-
+    return{ posts }
   }
   
 }
