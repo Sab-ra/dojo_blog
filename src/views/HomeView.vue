@@ -13,7 +13,7 @@ export default {
   name: 'HomeView',
   components: { PostList },
   setup() {
-    const posts = ref{ [
+    const posts = ref( [
       { title: "Welcome to the blog", 
         body: "Lorem impsum",
         id: 1 
@@ -21,8 +21,8 @@ export default {
       { title: "top 5 css tips",
         body: "Lorem impsum fuck",
         id: 2
-      },
-    ]}
+      }
+    ])
 
     return{ posts }
   }
