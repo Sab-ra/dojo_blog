@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "title": "Welcome to the new blog",
+      "body": "In Zsh, you can use the mkdir command along with the -p option to create both a directory and a file within that directory in a single line. Here's an example: shell Copy code mkdir -p path/to/directory && touch path/to/directory/file.txt In the above command, -p ensures that the parent directories (path/to/directory) are created if they don't exist. && is used to separate the two commands, ensuring that the second command (touch) is executed only if the first command (mkdir) is successful. This way, you create the directory and then create an empty file named file.txt within that directory. Replace path/to/directory and file.txt with the desired directory path and file name, respectively.",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ],
+      "id": 1
+    },
+    {
+      "title": "Top 5 CSS Tips",
+      "body": "In Zsh, you can use the mkdir command along with the -p option to create both a directory and a file within that directory in a single line. Here's an example: shell Copy code mkdir -p path/to/directory && touch path/to/directory/file.txt In the above command, -p ensures that the parent directories (path/to/directory) are created if they don't exist. && is used to separate the two commands, ensuring that the second command (touch) is executed only if the first command (mkdir) is successful. This way, you create the directory and then create an empty file named file.txt within that directory. Replace path/to/directory and file.txt with the desired directory path and file name, respectively.",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ],
+      "id": 2
+    }
+  ]
+}
