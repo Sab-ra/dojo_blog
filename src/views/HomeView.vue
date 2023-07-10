@@ -24,14 +24,14 @@ export default {
 
     const loadDataFromServer = async () => {
       try {
-        let data = await fetch( 'http://localhost:3000/posts' )
+        let data = await fetch( 'http://localhost:3000/post' )
         if( !data.ok ) {
           throw Error( 'no data available' )
         }
         posts.value = await data.json()
       }
-      catch( error ) {
-        error.value = error.message
+      catch( err ) {
+        error.value = err.message
         console.log( error.value )
       }
       return error
