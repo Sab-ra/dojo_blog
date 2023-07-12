@@ -13,35 +13,21 @@
 
 <script>
 import PostList from '@/components/PostList.vue'
-import { computed, ref, watch, watchEffect } from 'vue'
+import { ref } from 'vue'
+import getPosts from '../composables/getPosts'
 
 export default {
   name: 'HomeView',
   components: { PostList },
   setup() {
-    const posts = ref( [ ] )
-    const error = ref( null )
 
-    const loadDataFromServer = async () => {
-      try {
-        let data = await fetch( 'http://localhost:3000/posts' )
-        if( !data.ok ) {
-          throw Error( 'no data available' )
-        }
-        posts.value = await data.json()
-      }
-      catch( err ) {
-        error.value = err.message
-        console.log( error.value )
-      }
-      return error
-    }
+    const { posts, error, loadDataFromServer } = getPosts() 
 
     loadDataFromServer()
-
+  
     const showposts = ref( true )
     
-    return{ posts, showposts, error }
+    return{ posts, showposts, error, loadDataFromServer }
   }
   
 }
