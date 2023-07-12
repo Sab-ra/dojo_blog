@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <router-link v-bind:to="{ name: 'post_details', params: { id:post.id }}">
+    <router-link v-bind:to="{ name: 'postDetails', params: { id:post.id }}">
       <h3>{{ post.title }}</h3>
     </router-link>
     <p>{{ snippet }}</p>
