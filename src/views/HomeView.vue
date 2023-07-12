@@ -27,7 +27,7 @@ export default {
   
     const showposts = ref( true )
     
-    return{ posts, showposts, error, loadDataFromServer }
+    return{ posts, showposts, error }
   }
   
 }
