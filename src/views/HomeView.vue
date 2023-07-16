@@ -5,7 +5,9 @@
     <div v-if="posts.length">
       <PostList v-if="showposts" v-bind:posts="posts" />
     </div>
-    <div v-else>Loading...</div>
+    <div v-else>
+      <AwaitSpinnier />
+    </div>
     <button @click="showposts = !showposts">toggle posts</button>
     <button @click="posts.pop()">delete post</button>
   </div>
@@ -15,10 +17,11 @@
 import PostList from '@/components/PostList.vue'
 import { ref } from 'vue'
 import getPosts from '../composables/getPosts'
+import AwaitSpinnier from '../components/AwaitSpinnier.vue'
 
 export default {
   name: 'HomeView',
-  components: { PostList },
+  components: { PostList, AwaitSpinnier },
   setup() {
 
     const { posts, error, loadDataFromServer } = getPosts() 
