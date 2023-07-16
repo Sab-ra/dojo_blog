@@ -4,13 +4,19 @@
     <h3>{{ post.title }}</h3>
     <p class="pre">{{ post.body }}</p>
   </div>
+  <div v-else>
+      <AwaitSpinner />
+  </div>
 </template>
 
 <script>
 import getPostByID from '../composables/getPostById'
+import AwaitSpinner from '../components/AwaitSpinnier.vue'
 
 export default {
   props: [ 'id' ],
+  components: { AwaitSpinner },
+
   setup( props ) {
     const { post, error, loadParticularPostFromServer } = getPostByID( props.id )
 
