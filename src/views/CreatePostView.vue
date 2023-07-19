@@ -66,4 +66,35 @@ export default {
     color: white;
     margin-bottom: 10px;
   }
+  label::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ffaa00;
+    position: absolute;
+    z-index: -1;
+    padding-right: 40px;
+    left: -30px;
+    transform: rotateZ( -1.5deg )
+  }
+  button {
+    display: block;
+    margin-top: 30px;
+    background: #ff8800;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 6px;
+  }
+  .pill {
+    display: inline-block;
+    margin: 10px 10px 0px 0px;
+    color: #444;
+    background: #ddd;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
 </style>
