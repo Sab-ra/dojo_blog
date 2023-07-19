@@ -1,6 +1,6 @@
 <template>
   <div class="create">
-    <form>
+    <form @submit.prevent="submitPost">
       <label>Title:</label>
       <input v-model="title" type="text" required>
       <label>Content:</label>
@@ -36,7 +36,21 @@ export default {
       tag.value = '' // clear the tag field for the next tag input
     }
 
-    return { title, body, tag, tags, addTag }
+    const submitPost = async () => {
+      const post = {
+        title: title.value,
+        body: body.value,
+        tags: tags.value
+      }
+
+      await fetch( 'http://localhost:3000/posts', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify( post )
+      })
+    }
+
+    return { title, body, tag, tags, addTag, submitPost }
   }
 }
 </script>
