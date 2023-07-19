@@ -28,7 +28,7 @@ export default {
     const tag = ref( '' )
     const tags = ref( [] )
 
-    const addTag = () => {
+    const addTag = async () => {
       if( !tags.value.includes( tag.value )) {
         tag.value = tag.value.replace( /\s/, '' ) // replace any spaces with empty string
         tags.value.push( tag.value )

@@ -35,3 +35,11 @@ export default {
   
 }
 </script>
+
+<style>
+  .home {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 10px;
+  }
+</style>
