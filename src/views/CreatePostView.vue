@@ -31,6 +31,7 @@ export default {
     const tags = ref( [] )
 
     const router = useRouter()
+    console.log( router )
 
     const addTag = async () => {
       if( !tags.value.includes( tag.value )) {
@@ -52,6 +53,8 @@ export default {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify( post )
       })
+
+      await router.push({ name: 'home' })
     }
 
     return { title, body, tag, tags, addTag, submitPost }
