@@ -21,12 +21,16 @@
 
 <script>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
 export default {
   setup() {
     const title = ref( '' )
     const body = ref( '' )
     const tag = ref( '' )
     const tags = ref( [] )
+
+    const router = useRouter()
 
     const addTag = async () => {
       if( !tags.value.includes( tag.value )) {
