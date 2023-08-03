@@ -12,13 +12,17 @@
 <script>
 import getPostByID from '../composables/getPostById'
 import AwaitSpinner from '../components/AwaitSpinnier.vue'
+import { useRoute } from 'vue-router'
 
 export default {
   props: [ 'id' ],
   components: { AwaitSpinner },
 
   setup( props ) {
-    const { post, error, loadParticularPostFromServer } = getPostByID( props.id )
+    const rout = useRoute()
+    console.log( rout )
+
+    const { post, error, loadParticularPostFromServer } = getPostByID( rout.params.id )
 
     loadParticularPostFromServer()
     return { post, error }
