@@ -4,6 +4,7 @@
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length">
       <PostList v-if="showposts" v-bind:posts="posts" />
+      <TagCloud v-bind:posts="posts" />
     </div>
     <div v-else>
       <AwaitSpinnier />
@@ -15,13 +16,14 @@
 
 <script>
 import PostList from '@/components/PostList.vue'
+import TagCloud from '@/components/TagCloud.vue'
 import { ref } from 'vue'
 import getPosts from '../composables/getPosts'
 import AwaitSpinnier from '../components/AwaitSpinnier.vue'
 
 export default {
   name: 'HomeView',
-  components: { PostList, AwaitSpinnier },
+  components: { PostList, AwaitSpinnier, TagCloud },
   setup() {
 
     const { posts, error, loadDataFromServer } = getPosts() 
