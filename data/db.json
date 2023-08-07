@@ -18,7 +18,7 @@
         "webdev",
         "coding"
       ],
-      "id": 2 
+      "id": 2
     },
     {
       "title": "Add Post",
@@ -126,6 +126,29 @@
         "will"
       ],
       "id": 11
+    },
+    {
+      "title": "What a Fuck",
+      "body": "This post is about wTf",
+      "tags": [
+        "fuck",
+        "nicefuck",
+        "grossfuck"
+      ],
+      "id": 12
+    },
+    {
+      "title": "What Fuck",
+      "body": "This post is about Cat. The Cat.\n\nIt's about the one who is sitting behind me at the moment!",
+      "tags": [
+        "fuck",
+        "cat",
+        "whatthe fuck",
+        "      on that",
+        "            completely on",
+        "on  that"
+      ],
+      "id": 13
     }
   ]
 }
