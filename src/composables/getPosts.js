@@ -8,7 +8,7 @@ const getPosts = () => {
   const loadDataFromServer = async () => {
     try {
       const getResponseFromSpecificCollection = await projectFirestore.collection( 'posts' ).get()
-      console.log( getResponseFromSpecificCollection )
+      console.log( getResponseFromSpecificCollection.docs )
     }
     catch( err ) {
       error.value = err.message
