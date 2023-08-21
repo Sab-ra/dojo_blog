@@ -8,7 +8,11 @@ const getPosts = () => {
   const loadDataFromServer = async () => {
     try {
       const getResponseFromSpecificCollection = await projectFirestore.collection( 'posts' ).get()
-      console.log( getResponseFromSpecificCollection.docs )
+      
+      posts.value = getResponseFromSpecificCollection.docs.map( doc => {
+        // console.log( doc.data() )
+        return { ...doc.data(), id: doc.id } // brings post objects and add id's that are ON the posts in the DB
+      })
     }
     catch( err ) {
       error.value = err.message
