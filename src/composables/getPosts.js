@@ -8,7 +8,7 @@ const getPosts = () => {
   const loadDataFromServer = async () => {
     try {
       const getResponseFromSpecificCollection = await projectFirestore.collection( 'posts' )
-        .orderBy( 'title', 'desc' )
+        .orderBy( 'creationTimestamp', 'desc' )
         .get()
       
       posts.value = getResponseFromSpecificCollection.docs.map( doc => {
