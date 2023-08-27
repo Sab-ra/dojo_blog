@@ -7,7 +7,9 @@ const getPosts = () => {
 
   const loadDataFromServer = async () => {
     try {
-      const getResponseFromSpecificCollection = await projectFirestore.collection( 'posts' ).get()
+      const getResponseFromSpecificCollection = await projectFirestore.collection( 'posts' )
+        .orderBy( 'title', 'desc' )
+        .get()
       
       posts.value = getResponseFromSpecificCollection.docs.map( doc => {
         // console.log( doc.data() )
